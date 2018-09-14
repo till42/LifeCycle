@@ -262,7 +262,7 @@ MonoBehaviour:
     xMax: 6
     zMin: -20
     zMax: 20
-  tilt: 10
+  tilt: 0
   dodge: 5
   smoothing: 7.5
   startWait: {x: 0.5, y: 1}
