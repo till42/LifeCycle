@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 5
+  tilt: 0
   boundary:
     xMin: -6
     xMax: 6
@@ -9526,7 +9526,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fadfbd879e8be2b4ba7eaf331aa9ed05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62cdffda6f7424744a85e1e4707472f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
