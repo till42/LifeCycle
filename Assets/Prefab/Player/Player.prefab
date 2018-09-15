@@ -356,6 +356,7 @@ MonoBehaviour:
   shot: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 2}
   shotSpawn: {fileID: 4537017312825324}
   fireRate: 0.25
+  CurrencyController: {fileID: 0}
 --- !u!198 &198271054912990154
 ParticleSystem:
   m_ObjectHideFlags: 1
