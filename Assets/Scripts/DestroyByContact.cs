@@ -4,6 +4,7 @@ using System.Collections;
 public class DestroyByContact : MonoBehaviour {
     public GameObject explosion;
     public GameObject playerExplosion;
+    public int Health = 1;
     public int scoreValue;
     private GameController gameController;
 
@@ -31,11 +32,18 @@ public class DestroyByContact : MonoBehaviour {
 
         if (other.tag == "Player") {
             playerCollision(other);
+            Health = 0;
         }
 
         gameController.AddScore(scoreValue);
         destroyOther(other);
-        Destroy(gameObject);
+
+        //reduce health
+        Health--;
+
+        //destroy self, if health is 0
+        if (Health <= 0)
+            Destroy(gameObject);
     }
 
     protected virtual void playerCollision(Collider other) {

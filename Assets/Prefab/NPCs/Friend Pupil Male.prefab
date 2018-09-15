@@ -35,8 +35,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4119457906794498}
   - component: {fileID: 212489640919386188}
+  - component: {fileID: 95911224694345330}
   m_Layer: 0
-  m_Name: Book Sprite
+  m_Name: Pupil Male Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,13 +53,12 @@ GameObject:
   - component: {fileID: 4250056912367174}
   - component: {fileID: 54672545200073938}
   - component: {fileID: 135051677096468842}
-  - component: {fileID: 114874301518695016}
   - component: {fileID: 114319054087215218}
+  - component: {fileID: 114683693931215874}
   - component: {fileID: 114165854789379332}
   - component: {fileID: 82733715922934024}
-  - component: {fileID: 114117721107972830}
   m_Layer: 0
-  m_Name: Enemy Book Blue
+  m_Name: Friend Pupil Male
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926076474094530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.273628, y: 5.5128064, z: 2.884}
+  m_LocalPosition: {x: 1.74, y: 5.5128064, z: 13.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4698153313851678}
@@ -215,21 +215,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114117721107972830
-MonoBehaviour:
+--- !u!95 &95911224694345330
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1926076474094530}
+  m_GameObject: {fileID: 1330156452902982}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8846417901f4942d2a5fa9e32ce69d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
-  playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
-  Health: 2
-  scoreValue: 20
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2255235eac5ba841a65337c9218c71c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114165854789379332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,23 +268,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7850f24249e4056b2189de03ae584c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -7
+  speed: -5
   triggered: 0
---- !u!114 &114874301518695016
+--- !u!114 &114683693931215874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926076474094530}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5285ca1d9600a44bdba13467b2dead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
-  shotSpawn: {fileID: 4698153313851678}
-  fireRate: 1.5
-  delay: 0.5
+  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
+  playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
+  Health: 2
+  scoreValue: 10
 --- !u!135 &135051677096468842
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -329,7 +332,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5f0cdf92d391214cb9f1904a3d92ccf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36372edbc56c4914b829d0118eaeee35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
