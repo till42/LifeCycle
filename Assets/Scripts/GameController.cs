@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour {
 
     public Text scoreText;
     public Text restartText;
-    public Text gameOverText;
 
     private bool gameOver;
     private bool endBossReached;
@@ -26,13 +25,15 @@ public class GameController : MonoBehaviour {
     private int score;
     private int waveCount = 0;
 
+    private GameObject gameoverSign;
     void Start() {
         //initialize values
+        gameoverSign = GameObject.FindGameObjectWithTag("GameOver");
+        gameoverSign.SetActive(false);
         gameOver = false;
         restart = false;
         endBossReached = false;
         restartText.text = "";
-        gameOverText.text = "";
         score = 0;
         waveCount = 0;
 
@@ -144,7 +145,8 @@ public class GameController : MonoBehaviour {
 
 
     public void GameOver() {
-        gameOverText.text = "Game Over!";
+
+        gameoverSign.SetActive(true);
         gameOver = true;
     }
 }
