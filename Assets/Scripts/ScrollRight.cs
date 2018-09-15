@@ -6,6 +6,8 @@ public class ScrollRight : MonoBehaviour {
 
     public float speed;
 
+    public Animator animator;
+
     private Rigidbody m_rigidbody;
 
     void Start() {
@@ -17,6 +19,11 @@ public class ScrollRight : MonoBehaviour {
         if (moveHorizontal > 0) {
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
             m_rigidbody.velocity = movement * speed;
+            animator.SetBool("IsMoving", true);
+
+        } else {
+            animator.SetBool("IsMoving", false);
         }
+
     }
 }
