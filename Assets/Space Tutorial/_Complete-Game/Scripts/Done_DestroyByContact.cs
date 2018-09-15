@@ -18,15 +18,21 @@ public class Done_DestroyByContact : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == "Boundary" || other.tag == "Enemy") {
+
+        Debug.Log("Collided with " + other.name + " " + other.tag);
+
+        if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "SlowZone" || other.tag == "Boss")
+        {
             return;
         }
 
-        if (explosion != null) {
+        if (explosion != null)
+        {
             Instantiate(explosion, transform.position, transform.rotation);
         }
 
-        if (other.tag == "Player") {
+        if (other.tag == "Player")
+        {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             gameController.GameOver();
         }

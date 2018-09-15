@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 13600000}
   - component: {fileID: 11400002}
   - component: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shot_Paper_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  triggered: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4322791573218880}
   - component: {fileID: 212978835681032144}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

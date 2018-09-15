@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4698153313851678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shot Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4151450315402520}
   - component: {fileID: 198503696544792128}
   - component: {fileID: 199748049335503566}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Engines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4119457906794498}
   - component: {fileID: 212489640919386188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bully Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,9 +74,9 @@ GameObject:
   - component: {fileID: 114319054087215218}
   - component: {fileID: 114165854789379332}
   - component: {fileID: 82733715922934024}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Bully
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,6 +268,8 @@ MonoBehaviour:
   startWait: {x: 0.5, y: 1}
   maneuverTime: {x: 1, y: 2}
   maneuverWait: {x: 1, y: 2}
+  currentSpeed: 0
+  targetManeuver: 0
 --- !u!114 &114217389034228676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,7 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7850f24249e4056b2189de03ae584c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+  speed: -1
+  triggered: 0
 --- !u!114 &114874301518695016
 MonoBehaviour:
   m_ObjectHideFlags: 1
