@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -5
+  animator: {fileID: 545100612}
 --- !u!1 &457072145
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ GameObject:
   - component: {fileID: 545100609}
   - component: {fileID: 545100610}
   - component: {fileID: 545100611}
+  - component: {fileID: 545100612}
   m_Layer: 0
   m_Name: Player_Side_Tricycle
   m_TagString: Untagged
@@ -382,6 +384,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.2000008, z: 0.20000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &545100612
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545100608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74de9a654feca9f4f8d5fa559aa8bae4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &699538446
 GameObject:
   m_ObjectHideFlags: 0
