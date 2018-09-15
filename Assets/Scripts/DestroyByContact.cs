@@ -38,11 +38,17 @@ public class DestroyByContact : MonoBehaviour {
         gameController.AddScore(scoreValue);
         destroyOther(other);
 
+        if (this.gameObject.tag == "Boss")
+        {
+            Debug.Log("Bin IMMMMMMM Canvas Destroy");
+            gameController.DestroyHealthInCanvas();
+        }
         //reduce health
         Health--;
-
+        
         //destroy self, if health is 0
         if (Health <= 0)
+            
             Destroy(gameObject);
     }
 

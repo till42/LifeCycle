@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+
 public class GameController : MonoBehaviour {
 
     public List<WaveDefinition> waveDefinitions;
@@ -11,14 +12,13 @@ public class GameController : MonoBehaviour {
     public Vector3 spawnValues;
 
     public GameObject boss;
-
+    public Canvas canvas;
     public float spawnWait;
     public float startWait;
     public float waveWait;
-
+    public Sprite HealthSprite;
     public Text scoreText;
     public Text restartText;
-
     private bool gameOver;
     private bool endBossReached;
     private bool restart;
@@ -73,6 +73,7 @@ public class GameController : MonoBehaviour {
                 if (!endBossReached) {
                     //spawn boss
                     InstantiateGameObject(boss);
+                    PopulateHealthCanvas();
                     endBossReached = true;
                 }
             }
@@ -87,6 +88,34 @@ public class GameController : MonoBehaviour {
             }
             yield return 0;
         }
+    }
+
+    private void PopulateHealthCanvas()
+    {
+        int numberOfMaxHealth = boss.GetComponent<DestroyByContact>().Health;
+        for(int i = 0; i < numberOfMaxHealth; i++)
+        {
+            GameObject heart = CreateHealthGameObject();
+            heart.name = i.ToString();
+            heart.transform.SetParent(canvas.transform, false);
+        }
+        Canvas.ForceUpdateCanvases();
+    }
+
+    private GameObject CreateHealthGameObject()
+    {
+        GameObject heart = new GameObject();
+        Image imageSprite = heart.AddComponent<Image>();
+        imageSprite.sprite = HealthSprite;
+        RectTransform rectTrans = heart.GetComponent<RectTransform>();
+        rectTrans.sizeDelta = new Vector2(32, 32);
+        return heart;
+    }
+
+    public void DestroyHealthInCanvas()
+    {
+        Debug.Log(canvas.transform.GetChild(0).gameObject.name);
+        Destroy(canvas.transform.GetChild(0).gameObject);
     }
 
     IEnumerator SpawnWave(int waveNo) {
