@@ -7,15 +7,21 @@ public class Done_WeaponController : MonoBehaviour
 	public Transform shotSpawn;
 	public float fireRate;
 	public float delay;
-
+    private Animator animator;
 	void Start ()
 	{
-		InvokeRepeating ("Fire", delay, fireRate);
+        animator = GetComponentInChildren<Animator>();
+       
+        InvokeRepeating ("Fire", delay, fireRate);
 	}
 
 	void Fire ()
 	{
-		Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        if (animator != null)
+        {
+            animator.SetTrigger("AttackTrigger");
+        }
+        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 		GetComponent<AudioSource>().Play();
 	}
 }

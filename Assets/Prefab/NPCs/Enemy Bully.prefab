@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 114319054087215218}
   - component: {fileID: 114165854789379332}
   - component: {fileID: 82733715922934024}
+  - component: {fileID: 95640273902908198}
   m_Layer: 11
   m_Name: Enemy Bully
   m_TagString: Boss
@@ -246,6 +247,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95640273902908198
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926076474094530}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 637873f8e6edfd64d8d56c7e78715d1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114165854789379332
 MonoBehaviour:
   m_ObjectHideFlags: 1
