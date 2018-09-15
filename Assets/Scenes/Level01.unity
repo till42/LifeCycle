@@ -1183,7 +1183,7 @@ MonoBehaviour:
   hazards:
   - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
   - {fileID: 1926076474094530, guid: cfcb6a65ba26e6442931ccb3ad74eef9, type: 2}
-  - {fileID: 1926076474094530, guid: 2a480a022d6591f4aa217b8aa21a7937, type: 2}
+  - {fileID: 100002, guid: 834bfaee90a9d4e04b1e8c1ca22cc88e, type: 2}
   - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
   spawnValues: {x: 6, y: 0, z: 16}
   hazardCount: 10
