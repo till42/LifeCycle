@@ -25861,9 +25861,12 @@ MonoBehaviour:
   - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
   - {fileID: 1926076474094530, guid: cfcb6a65ba26e6442931ccb3ad74eef9, type: 2}
   - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+  friends:
+  - {fileID: 1926076474094530, guid: 316be48734d1d154ebeb4acbec42c8e1, type: 2}
   boss: {fileID: 1926076474094530, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
   spawnValues: {x: 6, y: 0, z: 16}
-  hazardsPerWave: 1
+  hazardsPerWave: 10
+  friendsPerWave: 3
   wavesPerLevel: 2
   spawnWait: 0.75
   startWait: 1
@@ -26204,48 +26207,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1937841120
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9.273628
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.5128064
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2.884
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4250056912367174, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1938515363
 GameObject:
   m_ObjectHideFlags: 0

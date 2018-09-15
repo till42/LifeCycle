@@ -2,12 +2,15 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
     public GameObject[] hazards;
+    public GameObject[] friends;
     public GameObject boss;
     public Vector3 spawnValues;
     public int hazardsPerWave = 10;
+    public int friendsPerWave = 3;
     public int wavesPerLevel = 2;
 
     public float spawnWait;
@@ -85,13 +88,41 @@ public class GameController : MonoBehaviour {
     }
 
     IEnumerator SpawnWave() {
-        //spawn hazardCount times a hazard --> one wave
+
+
+        List<int> selection = new List<int>();
+        //add hazardsPerWave times a 0
         for (int i = 0; i < hazardsPerWave; i++) {
-            //spawn a hazard
-            GameObject hazard = hazards[Random.Range(0, hazards.Length)];
-            InstantiateGameObject(hazard);
+            selection.Add(0);
+        }
+
+        //add friendsPerWave times a 1
+        for (int i = 0; i < friendsPerWave; i++) {
+            selection.Add(1);
+        }
+
+        //Shuffle the list
+        selection.Shuffle();
+
+        while (selection.Count > 0) {
+            //spawn a gameObject
+            GameObject gameObject;
+
+            //check if friend or hazard
+            int i = selection[0];
+            selection.RemoveAt(0);
+
+            if (i == 0)
+                gameObject = hazards[Random.Range(0, hazards.Length)];
+            else
+                gameObject = friends[Random.Range(0, friends.Length)];
+
+            InstantiateGameObject(gameObject);
+
             yield return new WaitForSeconds(spawnWait);
         }
+
+
     }
 
     private void InstantiateGameObject(GameObject go) {
@@ -108,6 +139,8 @@ public class GameController : MonoBehaviour {
     void UpdateScore() {
         scoreText.text = "Score: " + score;
     }
+
+
 
     public void GameOver() {
         gameOverText.text = "Game Over!";
