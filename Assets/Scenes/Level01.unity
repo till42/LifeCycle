@@ -25923,10 +25923,11 @@ MonoBehaviour:
   hazards:
   - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
   - {fileID: 1926076474094530, guid: cfcb6a65ba26e6442931ccb3ad74eef9, type: 2}
-  - {fileID: 1926076474094530, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
   - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+  boss: {fileID: 1926076474094530, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
   spawnValues: {x: 6, y: 0, z: 16}
-  hazardCount: 10
+  hazardsPerWave: 10
+  wavesPerLevel: 2
   spawnWait: 0.75
   startWait: 1
   waveWait: 4
