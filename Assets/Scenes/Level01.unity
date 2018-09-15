@@ -25857,17 +25857,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086cdeff9ad5466ea2bbaf3aab66458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazards:
-  - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
-  - {fileID: 1926076474094530, guid: cfcb6a65ba26e6442931ccb3ad74eef9, type: 2}
-  - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
-  friends:
-  - {fileID: 1926076474094530, guid: 316be48734d1d154ebeb4acbec42c8e1, type: 2}
-  boss: {fileID: 1926076474094530, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
+  waveDefinitions:
+  - Hazards:
+    - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+    Friends: []
+    HazardsPerWave: 10
+    FriendsPerWave: 0
+  - Hazards:
+    - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+    Friends:
+    - {fileID: 1926076474094530, guid: 316be48734d1d154ebeb4acbec42c8e1, type: 2}
+    HazardsPerWave: 10
+    FriendsPerWave: 1
   spawnValues: {x: 6, y: 0, z: 16}
-  hazardsPerWave: 10
-  friendsPerWave: 3
-  wavesPerLevel: 2
+  boss: {fileID: 1926076474094530, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
   spawnWait: 0.75
   startWait: 1
   waveWait: 4

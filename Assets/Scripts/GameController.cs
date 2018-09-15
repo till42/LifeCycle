@@ -5,13 +5,12 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
-    public GameObject[] hazards;
-    public GameObject[] friends;
-    public GameObject boss;
+
+    public List<WaveDefinition> waveDefinitions;
+
     public Vector3 spawnValues;
-    public int hazardsPerWave = 10;
-    public int friendsPerWave = 3;
-    public int wavesPerLevel = 2;
+
+    public GameObject boss;
 
     public float spawnWait;
     public float startWait;
@@ -25,6 +24,7 @@ public class GameController : MonoBehaviour {
     private bool endBossReached;
     private bool restart;
     private int score;
+    private int waveCount = 0;
 
     void Start() {
         //initialize values
@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour {
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
+        waveCount = 0;
 
         //Refresh UI
         UpdateScore();
@@ -57,16 +58,16 @@ public class GameController : MonoBehaviour {
         //wait some time at the beginning
         yield return new WaitForSeconds(startWait);
 
-        int waves = 0;
+
 
         //endlessly do the whole loop
         while (true) {
 
-            if (waves < wavesPerLevel) {
+            if (waveCount < waveDefinitions.Count) {
                 //spawn a wave
-                yield return SpawnWave();
+                yield return SpawnWave(waveCount);
                 yield return new WaitForSeconds(waveWait);
-                waves++;
+                waveCount++;
             } else {
                 if (!endBossReached) {
                     //spawn boss
@@ -87,17 +88,17 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    IEnumerator SpawnWave() {
-
+    IEnumerator SpawnWave(int waveNo) {
+        WaveDefinition waveDefinition = waveDefinitions[waveNo];
 
         List<int> selection = new List<int>();
         //add hazardsPerWave times a 0
-        for (int i = 0; i < hazardsPerWave; i++) {
+        for (int i = 0; i < waveDefinition.HazardsPerWave; i++) {
             selection.Add(0);
         }
 
         //add friendsPerWave times a 1
-        for (int i = 0; i < friendsPerWave; i++) {
+        for (int i = 0; i < waveDefinition.FriendsPerWave; i++) {
             selection.Add(1);
         }
 
@@ -113,9 +114,9 @@ public class GameController : MonoBehaviour {
             selection.RemoveAt(0);
 
             if (i == 0)
-                gameObject = hazards[Random.Range(0, hazards.Length)];
+                gameObject = waveDefinition.Hazards[Random.Range(0, waveDefinition.Hazards.Count)];
             else
-                gameObject = friends[Random.Range(0, friends.Length)];
+                gameObject = waveDefinition.Friends[Random.Range(0, waveDefinition.Friends.Count)];
 
             InstantiateGameObject(gameObject);
 
