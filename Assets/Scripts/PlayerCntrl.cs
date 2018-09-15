@@ -15,6 +15,7 @@ public class PlayerCntrl : MonoBehaviour
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
+    public CurrencyController CurrencyController;
 
     private float nextFire;
     private Rigidbody m_rigidbody;
@@ -22,6 +23,7 @@ public class PlayerCntrl : MonoBehaviour
 
     void Start()
     {
+        CurrencyController = CurrencyController.Instance;
         m_rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
     }

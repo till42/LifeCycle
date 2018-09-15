@@ -139,7 +139,7 @@ public class GameController : MonoBehaviour {
     }
 
     void UpdateScore() {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + CurrencyController.Instance.Score;
     }
 
 
