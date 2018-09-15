@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Done_DestroyByContact : MonoBehaviour {
+public class DestroyByContact : MonoBehaviour {
     public GameObject explosion;
     public GameObject playerExplosion;
     public int scoreValue;
@@ -21,24 +21,29 @@ public class Done_DestroyByContact : MonoBehaviour {
 
         Debug.Log("Collided with " + other.name + " " + other.tag);
 
-        if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "SlowZone" || other.tag == "Boss")
-        {
+        if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "SlowZone" || other.tag == "Boss") {
             return;
         }
 
-        if (explosion != null)
-        {
+        if (explosion != null) {
             Instantiate(explosion, transform.position, transform.rotation);
         }
 
-        if (other.tag == "Player")
-        {
-            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-            gameController.GameOver();
+        if (other.tag == "Player") {
+            playerCollision(other);
         }
 
         gameController.AddScore(scoreValue);
-        Destroy(other.gameObject);
+        destroyOther(other);
         Destroy(gameObject);
+    }
+
+    protected virtual void playerCollision(Collider other) {
+        Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+        gameController.GameOver();
+    }
+
+    protected virtual void destroyOther(Collider other) {
+        Destroy(other.gameObject);
     }
 }
