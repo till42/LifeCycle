@@ -3,8 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
-public class Done_GameController : MonoBehaviour
-{
+public class GameController : MonoBehaviour {
     public GameObject[] hazards;
     public Vector3 spawnValues;
     public int hazardCount;
@@ -20,35 +19,42 @@ public class Done_GameController : MonoBehaviour
     private bool restart;
     private int score;
 
-    void Start()
-    {
+    void Start() {
+        //initialize values
         gameOver = false;
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
+
+        //Refresh UI
         UpdateScore();
+
+        //spawn waves
         StartCoroutine(SpawnWaves());
     }
 
-    void Update()
-    {
-        if (restart)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+    void Update() {
+        if (!restart)
+            return;
+
+        //if the restart is active, wait for restart key
+        if (Input.GetKeyDown(KeyCode.R)) {
+            //...and reload the scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
-    IEnumerator SpawnWaves()
-    {
+    IEnumerator SpawnWaves() {
+        //wait some time at the beginning
         yield return new WaitForSeconds(startWait);
-        while (true)
-        {
-            for (int i = 0; i < hazardCount; i++)
-            {
+
+        //endlessly do the whole loop
+        while (true) {
+
+            //go through all hazards
+            for (int i = 0; i < hazardCount; i++) {
+                //spawn each hazard
                 GameObject hazard = hazards[Random.Range(0, hazards.Length)];
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
@@ -57,8 +63,7 @@ public class Done_GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
 
-            if (gameOver)
-            {
+            if (gameOver) {
                 restartText.text = "Press 'R' for Restart";
                 restart = true;
                 break;
@@ -66,19 +71,16 @@ public class Done_GameController : MonoBehaviour
         }
     }
 
-    public void AddScore(int newScoreValue)
-    {
+    public void AddScore(int newScoreValue) {
         score += newScoreValue;
         UpdateScore();
     }
 
-    void UpdateScore()
-    {
+    void UpdateScore() {
         scoreText.text = "Score: " + score;
     }
 
-    public void GameOver()
-    {
+    public void GameOver() {
         gameOverText.text = "Game Over!";
         gameOver = true;
     }
