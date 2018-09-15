@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4411368890529610}
   - component: {fileID: 212827843992091812}
+  - component: {fileID: 95732082021688070}
   m_Layer: 0
   m_Name: Sprite Player
   m_TagString: Untagged
@@ -317,6 +318,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95732082021688070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278437522302994}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5965ab1cede67fa44af281ab4eeafb28, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114956471521064796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,7 +348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 0
   boundary:
     xMin: -6
     xMax: 6
