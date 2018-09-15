@@ -2,11 +2,13 @@
 using System.Collections;
 
 [System.Serializable]
-public class Done_Boundary {
+public class Done_Boundary
+{
     public float xMin, xMax, zMin, zMax;
 }
 
-public class PlayerController : MonoBehaviour {
+public class PlayerCntrl : MonoBehaviour
+{
     public float speed;
     public Done_Boundary boundary;
 
@@ -18,20 +20,24 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody m_rigidbody;
     private Animator animator;
 
-    void Start() {
+    void Start()
+    {
         m_rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
     }
 
-    void Update() {
-        if (Input.GetButton("Fire1") && Time.time > nextFire) {
+    void Update()
+    {
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             GetComponent<AudioSource>().Play();
         }
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
