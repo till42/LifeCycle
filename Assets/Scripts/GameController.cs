@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
     public GameObject[] hazards;
+    public GameObject boss;
     public Vector3 spawnValues;
-    public int hazardCount;
+    public int hazardsPerWave = 10;
+    public int wavesPerLevel = 2;
+
     public float spawnWait;
     public float startWait;
     public float waveWait;
@@ -16,6 +19,7 @@ public class GameController : MonoBehaviour {
     public Text gameOverText;
 
     private bool gameOver;
+    private bool endBossReached;
     private bool restart;
     private int score;
 
@@ -23,6 +27,7 @@ public class GameController : MonoBehaviour {
         //initialize values
         gameOver = false;
         restart = false;
+        endBossReached = false;
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
@@ -49,26 +54,50 @@ public class GameController : MonoBehaviour {
         //wait some time at the beginning
         yield return new WaitForSeconds(startWait);
 
+        int waves = 0;
+
         //endlessly do the whole loop
         while (true) {
 
-            //go through all hazards
-            for (int i = 0; i < hazardCount; i++) {
-                //spawn each hazard
-                GameObject hazard = hazards[Random.Range(0, hazards.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(spawnWait);
+            if (waves < wavesPerLevel) {
+                //spawn a wave
+                yield return SpawnWave();
+                yield return new WaitForSeconds(waveWait);
+                waves++;
+            } else {
+                if (!endBossReached) {
+                    //spawn boss
+                    InstantiateGameObject(boss);
+                    endBossReached = true;
+                }
             }
-            yield return new WaitForSeconds(waveWait);
+
+
+
 
             if (gameOver) {
                 restartText.text = "Press 'R' for Restart";
                 restart = true;
                 break;
             }
+            yield return 0;
         }
+    }
+
+    IEnumerator SpawnWave() {
+        //spawn hazardCount times a hazard --> one wave
+        for (int i = 0; i < hazardsPerWave; i++) {
+            //spawn a hazard
+            GameObject hazard = hazards[Random.Range(0, hazards.Length)];
+            InstantiateGameObject(hazard);
+            yield return new WaitForSeconds(spawnWait);
+        }
+    }
+
+    private void InstantiateGameObject(GameObject go) {
+        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+        Quaternion spawnRotation = Quaternion.identity;
+        Instantiate(go, spawnPosition, spawnRotation);
     }
 
     public void AddScore(int newScoreValue) {
