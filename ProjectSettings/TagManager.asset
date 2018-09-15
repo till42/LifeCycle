@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Boundary
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 
@@ -41,4 +42,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Locker_Back1
+    uniqueID: 267366121
+    locked: 0
+  - name: Locker_Back2
+    uniqueID: 3195778549
+    locked: 0
+  - name: Locker_Back3
+    uniqueID: 1430552193
+    locked: 0
+  - name: Locker_Mid
+    uniqueID: 2240637409
+    locked: 0
+  - name: Locker_Front
+    uniqueID: 2055398635
+    locked: 0
+  - name: Floor
+    uniqueID: 3395875313
     locked: 0
