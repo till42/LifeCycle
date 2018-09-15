@@ -168,7 +168,7 @@ public class GameController : MonoBehaviour {
     }
 
     void UpdateScore() {
-        scoreText.text = "Score: " + CurrencyController.Instance.Score;
+        scoreText.text = CurrencyController.Instance.Score.ToString();
     }
 
 
