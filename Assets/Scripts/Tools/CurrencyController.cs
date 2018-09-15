@@ -10,19 +10,15 @@ public class CurrencyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        Debug.Log("Initialize Controller");
         GameObject.DontDestroyOnLoad(this);	
         if(Instance == null)
         {
-            Debug.Log("Setting instance");
             Instance = this;
         }
         else
         {
-            Debug.Log("Destroying Instance");
             Destroy(this);
         }
-        Debug.Log("Reached End of Instance Function");
     }
 	
 	// Update is called once per frame
