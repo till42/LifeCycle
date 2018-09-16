@@ -7,9 +7,9 @@ public class DestroyByContact : MonoBehaviour {
     public int Health = 1;
     public int scoreValue;
     private GameController gameController;
-
     void Start() {
         GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
+
         if (gameControllerObject != null) {
             gameController = gameControllerObject.GetComponent<GameController>();
         }
@@ -51,6 +51,7 @@ public class DestroyByContact : MonoBehaviour {
             Destroy(gameObject);
             if (gameObject.tag == "Boss")
             {
+                gameController.PlayVictorySound();
                 gameController.SpawnBike();
                 gameController.StartCoroutine(gameController.ReduceSpeedGradually());             
             }

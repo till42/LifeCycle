@@ -28,6 +28,9 @@ public class GameController : MonoBehaviour {
     private int score;
     private int waveCount = 0;
     public GameObject bike;
+    public AudioSource VictorySound;
+    public AudioSource BossMusic;
+    public AudioSource Music;
 
     private GameObject gameoverSign;
     void Start() {
@@ -178,6 +181,22 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public void PlayVictorySound()
+    {
+        VictorySound.Play();
+    }
+
+    public void PlayBossMusic()
+    {
+        BossMusic.Play();
+    }
+
+    public void StopMusic()
+    {
+        Music.Stop();
+    }
+
+
     public void SpawnBike() {
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
         Quaternion spawnRotation = Quaternion.identity;
@@ -185,6 +204,11 @@ public class GameController : MonoBehaviour {
     }
 
     private void InstantiateGameObject(GameObject go) {
+        if (go.tag == "Boss")
+        {
+            StopMusic();
+            PlayBossMusic();
+        }
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
         Quaternion spawnRotation = Quaternion.identity;
         Instantiate(go, spawnPosition, spawnRotation);

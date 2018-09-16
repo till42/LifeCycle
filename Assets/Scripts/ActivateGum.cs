@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class ActivateGum : MonoBehaviour {
     void Start() {
-        GetComponent<SpriteRenderer>().enabled = PlayerStats.GumLevel > 0;
+        //GetComponent<SpriteRenderer>().enabled = PlayerStats.GumLevel > 0;
     }
 }
