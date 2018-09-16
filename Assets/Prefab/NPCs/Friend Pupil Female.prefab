@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114683693931215874}
   - component: {fileID: 114165854789379332}
   - component: {fileID: 82733715922934024}
+  - component: {fileID: 114740992637019940}
   m_Layer: 0
   m_Name: Friend Pupil Female
   m_TagString: Enemy
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926076474094530}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef73dad58880c4027a74be9c91fb039e, type: 3}
   m_Name: 
@@ -249,7 +250,6 @@ MonoBehaviour:
     xMax: 6
     zMin: -20
     zMax: 20
-  tilt: 0
   dodge: 5
   smoothing: 7.5
   startWait: {x: 0.5, y: 1}
@@ -286,6 +286,23 @@ MonoBehaviour:
   Health: 1
   scoreValue: 20
   HighFive: {fileID: 1760421289493996, guid: 2238e2c0a20a6c24e915b53af2c3fae9, type: 2}
+--- !u!114 &114740992637019940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926076474094530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafcd769c9a0a24b903cffea9770efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundary:
+    xMin: -6
+    xMax: 6
+    zMin: -20
+    zMax: 20
+  strength: 1
 --- !u!135 &135051677096468842
 SphereCollider:
   m_ObjectHideFlags: 1
