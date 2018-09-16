@@ -5,12 +5,15 @@ public class DestroyOrHighFiveByContact : DestroyByContact {
 
     public GameObject HighFive;
 
+
     protected override void playerCollision(Collider other) {
         // Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
         if(other.tag == "Player")
         {
             Vector3 midpoint = CalculateMid(this.gameObject, other.gameObject);
             InstantiateGameObject(HighFive, midpoint);
+            Debug.Log("gameObject.GetComponent<AudioSource>()." + gameObject.GetComponent<AudioSource>().clip.name);
+            gameController.PlayHighFive();
             other.GetComponent<PlayerCntrl>().CurrencyController.AddScore(scoreValue);
         }
     }

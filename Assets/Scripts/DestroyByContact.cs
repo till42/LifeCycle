@@ -6,7 +6,7 @@ public class DestroyByContact : MonoBehaviour {
     public GameObject playerExplosion;
     public int Health = 1;
     public int scoreValue;
-    private GameController gameController;
+    public GameController gameController;
     void Start() {
         GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
 

@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour {
     public AudioSource VictorySound;
     public AudioSource BossMusic;
     public AudioSource Music;
-
+    public AudioSource HighFive;
     private GameObject gameoverSign;
     void Start() {
         //initialize values
@@ -196,6 +196,10 @@ public class GameController : MonoBehaviour {
         Music.Stop();
     }
 
+    public void PlayHighFive()
+    {
+        HighFive.Play();
+    }
 
     public void SpawnBike() {
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);

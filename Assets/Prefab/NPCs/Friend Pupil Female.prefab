@@ -131,7 +131,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 034c1764b7807b4449515227ee7d14e5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
     zMin: -20
     zMax: 20
   strength: 1
+  Active: 0
 --- !u!135 &135051677096468842
 SphereCollider:
   m_ObjectHideFlags: 1
