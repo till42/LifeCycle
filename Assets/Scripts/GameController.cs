@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour {
     public Sprite HealthSprite;
     public Text scoreText;
     public Text restartText;
+
+    public GameObject shop;
+
     private bool gameOver;
     private bool endBossReached;
     private bool restart;
@@ -34,6 +37,7 @@ public class GameController : MonoBehaviour {
         gameOver = false;
         restart = false;
         endBossReached = false;
+        shop.SetActive(false);
         restartText.text = "";
         score = 0;
         waveCount = 0;
@@ -85,17 +89,18 @@ public class GameController : MonoBehaviour {
             if (gameOver) {
                 restartText.text = "Press 'R' for Restart";
                 restart = true;
+
+                shop.SetActive(true);
+
                 break;
             }
             yield return 0;
         }
     }
 
-    private void PopulateHealthCanvas()
-    {
+    private void PopulateHealthCanvas() {
         int numberOfMaxHealth = boss.GetComponent<DestroyByContact>().Health;
-        for(int i = 0; i < numberOfMaxHealth; i++)
-        {
+        for (int i = 0; i < numberOfMaxHealth; i++) {
             GameObject heart = CreateHealthGameObject();
             heart.name = i.ToString();
             heart.transform.SetParent(canvas.transform, false);
@@ -103,8 +108,7 @@ public class GameController : MonoBehaviour {
         Canvas.ForceUpdateCanvases();
     }
 
-    private GameObject CreateHealthGameObject()
-    {
+    private GameObject CreateHealthGameObject() {
         GameObject heart = new GameObject();
         Image imageSprite = heart.AddComponent<Image>();
         imageSprite.sprite = HealthSprite;
@@ -113,8 +117,7 @@ public class GameController : MonoBehaviour {
         return heart;
     }
 
-    public void DestroyHealthInCanvas()
-    {
+    public void DestroyHealthInCanvas() {
         Debug.Log(canvas.transform.GetChild(0).gameObject.name);
         Destroy(canvas.transform.GetChild(0).gameObject);
     }
@@ -157,8 +160,7 @@ public class GameController : MonoBehaviour {
 
     }
 
-    public IEnumerator ReduceSpeedGradually()
-    {
+    public IEnumerator ReduceSpeedGradually() {
         float starttime = Time.time;
         float duration = 5;
         float endtime = Time.time + duration;
@@ -166,8 +168,7 @@ public class GameController : MonoBehaviour {
         GameObject floor = GameObject.FindGameObjectWithTag("Floor");
         BGScroller floorscroller = floor.GetComponent<BGScroller>();
         float speed = floorscroller.scrollSpeed;
-        while (true)
-        {
+        while (true) {
             float percentage = (Time.time - starttime) / duration;
             if (percentage > 1) break;
             float currentSpeed = Mathf.Lerp(speed, 0, percentage);
@@ -177,12 +178,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void SpawnBike()
-    {
+    public void SpawnBike() {
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
         Quaternion spawnRotation = Quaternion.identity;
         Instantiate(bike, spawnPosition, spawnRotation);
-     }
+    }
 
     private void InstantiateGameObject(GameObject go) {
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
