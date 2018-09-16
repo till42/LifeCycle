@@ -8,6 +8,10 @@ TagManager:
   - Boundary
   - SlowZone
   - Boss
+  - GameOver
+  - PlayerSprite
+  - Floor
+  - Bike
   layers:
   - Default
   - TransparentFX
