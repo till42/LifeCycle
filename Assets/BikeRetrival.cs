@@ -23,18 +23,18 @@ public class BikeRetrival : MonoBehaviour {
     {
         if(other.gameObject.tag == "PlayerSprite")
         {
-            Debug.Log("IS REACHED");
             other.gameObject.GetComponent<Animator>().enabled = false;
             other.gameObject.GetComponent<SpriteRenderer>().sprite = victorySprite;
             gameObject.GetComponent<Mover>().speed = 0;
             other.gameObject.GetComponentInParent<PlayerCntrl>().speed = 0;
             gameObject.GetComponent<AudioSource>().Play();
+            StartCoroutine(ChangeSceneRoutine());
         }
     }
 
     IEnumerator ChangeSceneRoutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("Main");
     }
 }
