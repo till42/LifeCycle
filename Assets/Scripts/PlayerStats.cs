@@ -57,8 +57,8 @@ public class PlayerStats : MonoBehaviour {
         if (GumLevel > 0)
             return 0;
 
-        if (!FindObjectOfType<GameController>().RemoveScore(GumPrice))
-            return 0;
+        //if (!FindObjectOfType<GameController>().RemoveScore(GumPrice))
+        //    return 0;
 
         instance.gum++;
         return instance.gumPrice;

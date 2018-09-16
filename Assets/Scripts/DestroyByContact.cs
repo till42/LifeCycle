@@ -7,8 +7,6 @@ public class DestroyByContact : MonoBehaviour {
     public int Health = 1;
     public int scoreValue;
     private GameController gameController;
-    public AudioSource destroyAudio;
-    public AudioSource shootAudio;
     void Start() {
         GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
 
@@ -50,14 +48,10 @@ public class DestroyByContact : MonoBehaviour {
         //destroy self, if health is 0
         if (Health <= 0)
         {
-            if(gameObject.tag == "Boss")
-            {
-                //shootAudio.Stop();
-                destroyAudio.Play();
-            }
             Destroy(gameObject);
             if (gameObject.tag == "Boss")
             {
+                gameController.PlayVictorySound();
                 gameController.SpawnBike();
                 gameController.StartCoroutine(gameController.ReduceSpeedGradually());             
             }
