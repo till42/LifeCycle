@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour {
     private bool restart;
     private int score;
     private int waveCount = 0;
+    public GameObject bike;
 
     private GameObject gameoverSign;
     void Start() {
@@ -155,6 +156,33 @@ public class GameController : MonoBehaviour {
 
 
     }
+
+    public IEnumerator ReduceSpeedGradually()
+    {
+        float starttime = Time.time;
+        float duration = 5;
+        float endtime = Time.time + duration;
+
+        GameObject floor = GameObject.FindGameObjectWithTag("Floor");
+        BGScroller floorscroller = floor.GetComponent<BGScroller>();
+        float speed = floorscroller.scrollSpeed;
+        while (true)
+        {
+            float percentage = (Time.time - starttime) / duration;
+            if (percentage > 1) break;
+            float currentSpeed = Mathf.Lerp(speed, 0, percentage);
+            floorscroller.scrollSpeed = currentSpeed;
+            Debug.Log("NEW SPEED IS : " + currentSpeed + " || floorscroller-Speed actually is: " + floorscroller.scrollSpeed + " | | t is = " + percentage);
+            yield return null;
+        }
+    }
+
+    public void SpawnBike()
+    {
+        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+        Quaternion spawnRotation = Quaternion.identity;
+        Instantiate(bike, spawnPosition, spawnRotation);
+     }
 
     private void InstantiateGameObject(GameObject go) {
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
