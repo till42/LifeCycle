@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4411368890529610}
   - component: {fileID: 212827843992091812}
   - component: {fileID: 95732082021688070}
+  - component: {fileID: 135009720780827448}
   m_Layer: 0
   m_Name: Sprite Player
   m_TagString: PlayerSprite
@@ -344,7 +345,7 @@ MonoBehaviour:
     zMax: 8
   shot: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 2}
   shotSpawn: {fileID: 4537017312825324}
-  fireRate: 0.25
+  fireRate: 0.3
   CurrencyController: {fileID: 0}
 --- !u!114 &114114607358710078
 MonoBehaviour:
@@ -379,6 +380,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2fb1cd19a2f3478b6a5d085a5b46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135009720780827448
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278437522302994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.6000004
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136153568107982200
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -14009,23 +14009,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1018595484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1278437522302994, guid: c797a7cf34962a94a8a4cef4b39fa12f,
-    type: 2}
-  m_PrefabInternal: {fileID: 2123367941}
---- !u!135 &1018595488
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1018595484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.6000004
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1027827625
 GameObject:
   m_ObjectHideFlags: 0
@@ -26154,8 +26137,33 @@ MonoBehaviour:
   - Hazards:
     - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
     Friends: []
-    HazardsPerWave: 2
+    HazardsPerWave: 10
     FriendsPerWave: 0
+  - Hazards:
+    - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+    - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
+    Friends:
+    - {fileID: 1926076474094530, guid: 09cde73182b91364a967b3db843a6d46, type: 2}
+    HazardsPerWave: 10
+    FriendsPerWave: 2
+  - Hazards:
+    - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+    - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
+    - {fileID: 1926076474094530, guid: cfcb6a65ba26e6442931ccb3ad74eef9, type: 2}
+    Friends:
+    - {fileID: 1926076474094530, guid: 09cde73182b91364a967b3db843a6d46, type: 2}
+    - {fileID: 1926076474094530, guid: 316be48734d1d154ebeb4acbec42c8e1, type: 2}
+    HazardsPerWave: 10
+    FriendsPerWave: 3
+  - Hazards:
+    - {fileID: 1926076474094530, guid: 281a8de573eb01045ba8c4d9eb8e33a4, type: 2}
+    - {fileID: 1926076474094530, guid: be175e9de3715334197b3f046668f783, type: 2}
+    - {fileID: 1926076474094530, guid: cfcb6a65ba26e6442931ccb3ad74eef9, type: 2}
+    Friends:
+    - {fileID: 1926076474094530, guid: 09cde73182b91364a967b3db843a6d46, type: 2}
+    - {fileID: 1926076474094530, guid: 316be48734d1d154ebeb4acbec42c8e1, type: 2}
+    HazardsPerWave: 10
+    FriendsPerWave: 4
   spawnValues: {x: 6, y: 0, z: 16}
   boss: {fileID: 1926076474094530, guid: abb584428ebc0e844aafbb9d8d18edd1, type: 2}
   canvas: {fileID: 1106202395}
