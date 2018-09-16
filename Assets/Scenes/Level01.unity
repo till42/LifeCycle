@@ -26042,6 +26042,7 @@ MonoBehaviour:
   HealthSprite: {fileID: 21300000, guid: a0328cb804cb87f4bac3cb038944e07b, type: 3}
   scoreText: {fileID: 330698628}
   restartText: {fileID: 1118447433}
+  bike: {fileID: 1141790288351016, guid: 4685b35ff5ee97b438bbda6ca49044cc, type: 2}
 --- !u!4 &1904691132
 Transform:
   m_ObjectHideFlags: 0
