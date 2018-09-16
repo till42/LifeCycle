@@ -8,8 +8,18 @@ public class AttractedManeuver : MonoBehaviour {
 
     private Rigidbody m_rigidbody;
     private Transform target;
+    public bool Active = false;
 
     void Start() {
+        if (PlayerStats.GumLevel > 0) {
+            Active = true;
+            GetComponent<Done_EvasiveManeuver>().enabled = false;
+        } else {
+            Active = false;
+            GetComponent<Done_EvasiveManeuver>().enabled = true;
+        }
+
+
         m_rigidbody = GetComponent<Rigidbody>();
 
         PlayerCntrl player = FindObjectOfType<PlayerCntrl>();
@@ -23,6 +33,9 @@ public class AttractedManeuver : MonoBehaviour {
 
 
     void FixedUpdate() {
+        if (!Active)
+            return;
+
         if (target == null)
             return;
 
