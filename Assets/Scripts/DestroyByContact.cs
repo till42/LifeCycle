@@ -40,7 +40,6 @@ public class DestroyByContact : MonoBehaviour {
 
         if (this.gameObject.tag == "Boss")
         {
-            Debug.Log("Bin IMMMMMMM Canvas Destroy");
             gameController.DestroyHealthInCanvas();
         }
         //reduce health
@@ -48,8 +47,15 @@ public class DestroyByContact : MonoBehaviour {
         
         //destroy self, if health is 0
         if (Health <= 0)
-            
+        {
             Destroy(gameObject);
+            if (gameObject.tag == "Boss")
+            {
+                gameController.SpawnBike();
+                gameController.StartCoroutine(gameController.ReduceSpeedGradually());             
+            }
+        }
+        
     }
 
     protected virtual void playerCollision(Collider other) {
