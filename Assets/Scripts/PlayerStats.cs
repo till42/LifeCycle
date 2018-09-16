@@ -15,6 +15,9 @@ public class PlayerStats : MonoBehaviour {
 
     public int gum = 0;
     public int gumPrice = 1000;
+
+    public static int GumPrice { get { return instance.gumPrice; } }
+
     /// <summary>
     /// Has the player upgraded the gum
     /// 0: no, 1:0
@@ -52,6 +55,9 @@ public class PlayerStats : MonoBehaviour {
     public static int PurchaseGum() {
         //not succesfull, if already purchased
         if (GumLevel > 0)
+            return 0;
+
+        if (!FindObjectOfType<GameController>().RemoveScore(GumPrice))
             return 0;
 
         instance.gum++;
