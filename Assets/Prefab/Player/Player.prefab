@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4737575192511468}
   - component: {fileID: 212887564329743810}
+  - component: {fileID: 114858701319152732}
   m_Layer: 0
   m_Name: Gum
   m_TagString: Untagged
@@ -105,6 +106,7 @@ GameObject:
   - component: {fileID: 114004040680855728}
   - component: {fileID: 136153568107982200}
   - component: {fileID: 136754048502612332}
+  - component: {fileID: 114114607358710078}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -344,6 +346,28 @@ MonoBehaviour:
   shotSpawn: {fileID: 4537017312825324}
   fireRate: 0.25
   CurrencyController: {fileID: 0}
+--- !u!114 &114114607358710078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792669729999242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67013f34d86c9d24ca6977f190ed0ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114858701319152732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1306271817698800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67013f34d86c9d24ca6977f190ed0ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114995116259668526
 MonoBehaviour:
   m_ObjectHideFlags: 1
