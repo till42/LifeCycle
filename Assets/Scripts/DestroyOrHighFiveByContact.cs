@@ -12,7 +12,6 @@ public class DestroyOrHighFiveByContact : DestroyByContact {
         {
             Vector3 midpoint = CalculateMid(this.gameObject, other.gameObject);
             InstantiateGameObject(HighFive, midpoint);
-            Debug.Log("gameObject.GetComponent<AudioSource>()." + gameObject.GetComponent<AudioSource>().clip.name);
             gameController.PlayHighFive();
             other.GetComponent<PlayerCntrl>().CurrencyController.AddScore(scoreValue);
         }

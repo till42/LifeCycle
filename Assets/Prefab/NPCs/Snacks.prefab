@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114749768949178482}
   - component: {fileID: 114798440898887048}
   - component: {fileID: 114135663351044506}
-  - component: {fileID: 82518544411998946}
   - component: {fileID: 114028784429429098}
+  - component: {fileID: 82518544411998946}
   m_Layer: 0
   m_Name: Snacks
   m_TagString: Enemy
@@ -226,10 +226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5285ca1d9600a44bdba13467b2dead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
+  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
+  playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
   Health: 1
   scoreValue: 0
+  gameController: {fileID: 0}
   HighFive: {fileID: 1373602726660548, guid: b02c6b9bdc651e645a3b3eb3ee95e211, type: 2}
 --- !u!114 &114135663351044506
 MonoBehaviour:

@@ -10,7 +10,6 @@ public class BikeRetrival : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
     }
 
 

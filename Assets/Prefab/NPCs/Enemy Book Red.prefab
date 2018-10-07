@@ -131,7 +131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cd717832692e57f4fac43c791920c600, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 0.48
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -231,7 +231,6 @@ MonoBehaviour:
     xMax: 6
     zMin: -20
     zMax: 20
-  tilt: 0
   dodge: 5
   smoothing: 7.5
   startWait: {x: 0.5, y: 1}
@@ -254,6 +253,7 @@ MonoBehaviour:
   playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
   Health: 3
   scoreValue: 20
+  gameController: {fileID: 0}
 --- !u!114 &114319054087215218
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -121,7 +121,6 @@ public class GameController : MonoBehaviour {
     }
 
     public void DestroyHealthInCanvas() {
-        Debug.Log(canvas.transform.GetChild(0).gameObject.name);
         Destroy(canvas.transform.GetChild(0).gameObject);
     }
 
@@ -166,7 +165,7 @@ public class GameController : MonoBehaviour {
     public IEnumerator ReduceSpeedGradually() {
         float starttime = Time.time;
         float duration = 5;
-        float endtime = Time.time + duration;
+        //float endtime = Time.time + duration;
 
         GameObject floor = GameObject.FindGameObjectWithTag("Floor");
         BGScroller floorscroller = floor.GetComponent<BGScroller>();
@@ -176,7 +175,6 @@ public class GameController : MonoBehaviour {
             if (percentage > 1) break;
             float currentSpeed = Mathf.Lerp(speed, 0, percentage);
             floorscroller.scrollSpeed = currentSpeed;
-            Debug.Log("NEW SPEED IS : " + currentSpeed + " || floorscroller-Speed actually is: " + floorscroller.scrollSpeed + " | | t is = " + percentage);
             yield return null;
         }
     }

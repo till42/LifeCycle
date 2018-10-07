@@ -14,13 +14,10 @@ public class DestroyByContact : MonoBehaviour {
             gameController = gameControllerObject.GetComponent<GameController>();
         }
         if (gameController == null) {
-            Debug.Log("Cannot find 'GameController' script");
         }
     }
 
     void OnTriggerEnter(Collider other) {
-
-        Debug.Log("Collided with " + other.name + " " + other.tag);
 
         if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "SlowZone" || other.tag == "Boss") {
             return;

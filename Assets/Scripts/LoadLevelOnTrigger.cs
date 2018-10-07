@@ -15,7 +15,6 @@ public class LoadLevelOnTrigger : MonoBehaviour {
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Next Level");
         SceneManager.LoadScene(LevelName);
     }
 }

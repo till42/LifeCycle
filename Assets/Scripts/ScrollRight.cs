@@ -38,12 +38,17 @@ public class ScrollRight : MonoBehaviour {
         if (moveHorizontal > 0) {
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
             m_rigidbody.velocity = movement * speed;
-            animator.SetBool("IsMoving", true);
-            animator2.SetBool("IsMoving", true);
+            if (animator.isActiveAndEnabled)
+              animator.SetBool("IsMoving", true);
+            if (animator2.isActiveAndEnabled)
+
+                animator2.SetBool("IsMoving", true);
 
         } else {
-            animator.SetBool("IsMoving", false);
-            animator2.SetBool("IsMoving", false);
+            if (animator.isActiveAndEnabled)
+                animator.SetBool("IsMoving", false);
+            if (animator2.isActiveAndEnabled)
+                animator2.SetBool("IsMoving", false);
         }
 
     }

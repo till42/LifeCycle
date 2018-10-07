@@ -14,7 +14,6 @@ public class LoadLevelPopupOnTrigger : MonoBehaviour {
 
     IEnumerator Wait() {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Next Level");
         Popup.SetActive(true);
     }
 }
